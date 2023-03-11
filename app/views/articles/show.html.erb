@@ -3,6 +3,18 @@
 <p><%= @article.body %></p>
 
 <ul>
-  <li><%= link_to "Update", edit_article_path %></li>
-  <li><%= link_to "Articles homepage", articles_path %></li>
+  <li>
+    <%= link_to "Update", edit_article_path %>
+  </li>
+
+  <li>
+    <%= link_to "Delete", article_path, data: {
+      turbo_method: :delete,
+      turbo_confirm: 'Are you sure?'
+    } %>
+  </li>
+
+  <li>
+    <%= link_to "Articles homepage", articles_path %>
+  </li>
 </ul>
