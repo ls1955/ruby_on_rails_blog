@@ -18,3 +18,27 @@
     <%= link_to "Articles homepage", articles_path %>
   </li>
 </ul>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+  <p>
+    "<%= comment.body %>" by <em><%= comment.commenter %></em>
+  </p>
+<% end %>
+
+<h2>Add a new comment:</h2>
+<%= form_with model: [@article, @article.comments.build] do |form| %>
+  <p>
+    <%= form.label :commenter %>
+    <%= form.text_field :commenter %>
+  </p>
+
+  <p>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
