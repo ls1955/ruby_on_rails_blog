@@ -2,4 +2,7 @@
 
 <p><%= @article.body %></p>
 
-<%= link_to "Article", articles_path %>
+<ul>
+  <li><%= link_to "Update", edit_article_path %></li>
+  <li><%= link_to "Articles homepage", articles_path %></li>
+</ul>
